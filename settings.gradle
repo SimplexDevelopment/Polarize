@@ -1,0 +1,4 @@
+rootProject.name = 'Polarize'
+include 'Commons'
+include 'Paper'
+
