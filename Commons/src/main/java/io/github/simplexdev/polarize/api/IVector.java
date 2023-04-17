@@ -109,10 +109,9 @@ public interface IVector {
      * vectors. The distance is calculated from the X Y Z mods as
      * sqrt(distanceSquared(vector));
      *
-     * @see #distanceSquared(IVector)
-     *
      * @param vector The vector to get the distance between.
      * @return The distance between this vector and the vector passed in.
+     * @see #distanceSquared(IVector)
      */
     double distance(@NotNull IVector vector);
 

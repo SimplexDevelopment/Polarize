@@ -12,8 +12,7 @@ package io.github.simplexdev.polarize.api.units;
  * @see <a href="https://en.wikipedia.org/wiki/Radius">Radius</a>
  */
 @FunctionalInterface
-public interface Radius
-{
+public interface Radius {
     /**
      * This method returns a double value representing the length of the radius.
      *

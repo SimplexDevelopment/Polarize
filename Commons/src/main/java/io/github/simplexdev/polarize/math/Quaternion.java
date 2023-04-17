@@ -3,7 +3,10 @@ package io.github.simplexdev.polarize.math;
 import io.github.simplexdev.polarize.api.IQuaternion;
 
 public class Quaternion implements IQuaternion {
-    private double w, x, y, z;
+    private final double w;
+    private final double x;
+    private final double y;
+    private final double z;
 
     public Quaternion(double w, double x, double y, double z) {
         this.w = w;

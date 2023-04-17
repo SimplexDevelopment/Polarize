@@ -14,8 +14,7 @@ import io.github.simplexdev.polarize.polar.SphericalUnit;
  * This class provides static methods for converting between different polar coordinate systems and their Cartesian equivalents.
  * It includes methods for converting to and from polar coordinates in 2D and 3D, as well as to and from spherical coordinates.
  */
-public class Polarizer
-{
+public class Polarizer {
     private Polarizer() {
         throw new AssertionError();
     }
@@ -31,8 +30,7 @@ public class Polarizer
      * @see <a href="https://en.wikipedia.org/wiki/Polar_coordinate_system">Polar coordinate system</a>
      * @see <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">Cartesian coordinate system</a>
      */
-    public static CartesianUnit toCartesianUnit(PolarUnit unit)
-    {
+    public static CartesianUnit toCartesianUnit(PolarUnit unit) {
         double x = unit.radius() * Math.sin(unit.theta());
         double z = unit.radius() * Math.cos(unit.theta());
         return new CartesianUnit(x, 0, z);
@@ -50,8 +48,7 @@ public class Polarizer
      * @see <a href="https://en.wikipedia.org/wiki/Spherical_coordinate_system">Spherical coordinate system</a>
      * @see <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">Cartesian coordinate system</a>
      */
-    public static CartesianUnit toCartesianUnit(IScalar scalar, Theta theta)
-    {
+    public static CartesianUnit toCartesianUnit(IScalar scalar, Theta theta) {
         double x = scalar.getMagnitude() * Math.sin(theta.getZenith());
         double z = scalar.getMagnitude() * Math.cos(theta.getZenith());
         return new CartesianUnit(x, 0, z);
@@ -69,8 +66,7 @@ public class Polarizer
      * @see <a href="https://en.wikipedia.org/wiki/Spherical_coordinate_system">Spherical coordinate system</a>
      * @see <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">Cartesian coordinate system</a>
      */
-    public static CartesianUnit toCartesianUnit(double radius, double theta)
-    {
+    public static CartesianUnit toCartesianUnit(double radius, double theta) {
         double x = radius * Math.sin(theta);
         double z = radius * Math.cos(theta);
         return new CartesianUnit(x, 0, z);
@@ -87,8 +83,7 @@ public class Polarizer
      * @see <a href="https://en.wikipedia.org/wiki/Spherical_coordinate_system">Spherical coordinate system</a>
      * @see <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">Cartesian coordinate system</a>
      */
-    public static CartesianUnit toCartesianUnit(SphericalUnit unit)
-    {
+    public static CartesianUnit toCartesianUnit(SphericalUnit unit) {
         double x = unit.radius() * Math.sin(unit.theta()) * Math.cos(unit.phi());
         double y = unit.radius() * Math.cos(unit.theta());
         double z = unit.radius() * Math.sin(unit.theta()) * Math.sin(unit.phi());
@@ -103,8 +98,7 @@ public class Polarizer
      * @param phi    the phi coordinate of the vector
      * @return the CartesianUnit representation of the vector
      */
-    public static CartesianUnit toCartesianUnit(IScalar scalar, Theta theta, Phi phi)
-    {
+    public static CartesianUnit toCartesianUnit(IScalar scalar, Theta theta, Phi phi) {
         double x = scalar.getMagnitude() * Math.sin(theta.getZenith()) * Math.cos(phi.getAzimuth());
         double y = scalar.getMagnitude() * Math.cos(theta.getZenith());
         double z = scalar.getMagnitude() * Math.sin(theta.getZenith()) * Math.sin(phi.getAzimuth());
@@ -119,8 +113,7 @@ public class Polarizer
      * @param phi    the phi angle in radians of the spherical coordinate
      * @return the corresponding CartesianUnit
      */
-    public static CartesianUnit toCartesianUnit(double radius, double theta, double phi)
-    {
+    public static CartesianUnit toCartesianUnit(double radius, double theta, double phi) {
         double x = radius * Math.sin(theta) * Math.cos(phi);
         double y = radius * Math.cos(theta);
         double z = radius * Math.sin(theta) * Math.sin(phi);
@@ -133,8 +126,7 @@ public class Polarizer
      * @param unit the CartesianUnit to be converted
      * @return a PolarUnit representing the same point as the input CartesianUnit
      */
-    public static PolarUnit toPolarUnit(CartesianUnit unit)
-    {
+    public static PolarUnit toPolarUnit(CartesianUnit unit) {
         double radius = Math.sqrt(
                 unit.getPoint2D().getX() * unit.getPoint2D().getX()
                         + unit.getPoint2D().getZ() * unit.getPoint2D().getZ());
@@ -150,8 +142,7 @@ public class Polarizer
      * @param vector the {@link IVector} representing the radius of the resulting {@link PolarUnit}
      * @return a {@link PolarUnit} representing the same point as the given {@link CartesianUnit}
      */
-    public static PolarUnit toPolarUnit(CartesianUnit unit, IVector vector)
-    {
+    public static PolarUnit toPolarUnit(CartesianUnit unit, IVector vector) {
         double radius = vector.length();
         double theta = Math.atan2(unit.getPoint2D().getX(), unit.getPoint2D().getZ());
         return new PolarUnit(radius, theta);
@@ -164,8 +155,7 @@ public class Polarizer
      * @param vector the vector used as a reference for the polar coordinates
      * @return a PolarUnit representing the polar coordinates of the given point
      */
-    public static PolarUnit toPolarUnit(IPoint2D point, IVector vector)
-    {
+    public static PolarUnit toPolarUnit(IPoint2D point, IVector vector) {
         double radius = vector.length();
         double theta = Math.atan2(point.getX(), point.getZ());
         return new PolarUnit(radius, theta);
@@ -178,8 +168,7 @@ public class Polarizer
      * @param z the z-coordinate of the point
      * @return a {@code PolarUnit} representing the polar coordinates of the point
      */
-    public static PolarUnit toPolarUnit(double x, double z)
-    {
+    public static PolarUnit toPolarUnit(double x, double z) {
         double radius = Math.sqrt(x * x + z * z);
         double theta = Math.atan2(x, z);
         return new PolarUnit(radius, theta);
@@ -191,8 +180,7 @@ public class Polarizer
      * @param unit the CartesianUnit to be converted.
      * @return the SphericalUnit representing the same point as the input CartesianUnit.
      */
-    public static SphericalUnit toSphericalUnit(CartesianUnit unit)
-    {
+    public static SphericalUnit toSphericalUnit(CartesianUnit unit) {
         double radius = Math.sqrt(
                 unit.getPoint3D().getX() * unit.getPoint3D().getX()
                         + unit.getPoint3D().getY() * unit.getPoint3D().getY()
@@ -209,8 +197,7 @@ public class Polarizer
      * @param vector the vector to use for the conversion
      * @return a new {@link SphericalUnit} representing the point in spherical coordinates
      */
-    public static SphericalUnit toSphericalUnit(IPoint3D point, IVector vector)
-    {
+    public static SphericalUnit toSphericalUnit(IPoint3D point, IVector vector) {
         double radius = vector.length();
         double theta = Math.acos(point.getY() / radius);
         double phi = Math.atan2(point.getX(), point.getZ());
@@ -225,8 +212,7 @@ public class Polarizer
      * @param z the z-coordinate
      * @return a new {@code SphericalUnit} representing the converted spherical coordinates
      */
-    public static SphericalUnit toSphericalUnit(double x, double y, double z)
-    {
+    public static SphericalUnit toSphericalUnit(double x, double y, double z) {
         double radius = Math.sqrt(x * x + y * y + z * z);
         double theta = Math.acos(y / radius);
         double phi = Math.atan2(x, z);

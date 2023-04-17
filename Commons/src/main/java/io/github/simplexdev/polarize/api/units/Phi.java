@@ -12,8 +12,7 @@ package io.github.simplexdev.polarize.api.units;
  * @see <a href="https://en.wikipedia.org/wiki/Azimuth">Azimuth</a>
  */
 @FunctionalInterface
-public interface Phi
-{
+public interface Phi {
 
     /**
      * This method returns a double value representing the azimuth.

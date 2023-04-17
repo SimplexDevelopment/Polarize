@@ -90,11 +90,31 @@ public interface IQuaternion {
      */
     double getMagnitude();
 
+    /**
+     * Returns the angular rotation of this quaternion.
+     *
+     * @return the angular rotation of this quaternion
+     */
     double getW();
 
+    /**
+     * Returns the x component of this quaternion.
+     *
+     * @return the x component of this quaternion
+     */
     double getX();
 
+    /**
+     * Returns the y component of this quaternion.
+     *
+     * @return the y component of this quaternion
+     */
     double getY();
 
+    /**
+     * Returns the z component of this quaternion.
+     *
+     * @return the z component of this quaternion
+     */
     double getZ();
 }

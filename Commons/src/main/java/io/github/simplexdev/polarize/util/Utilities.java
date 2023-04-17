@@ -1,11 +1,6 @@
 package io.github.simplexdev.polarize.util;
 
-public class Utilities
-{
-    private Utilities() {
-        throw new AssertionError();
-    }
-
+public class Utilities {
     /**
      * The value of pi divided by 4.
      * This represents 45 degrees in radians.
@@ -31,6 +26,9 @@ public class Utilities
      * This represents 360 degrees in radians.
      */
     public static final double RADIAN_360 = Math.PI * 2;
+    private Utilities() {
+        throw new AssertionError();
+    }
 
     /**
      * Calculates the magnitude of a vector in 2D Cartesian coordinate system.
@@ -39,8 +37,7 @@ public class Utilities
      * @param z the z-coordinate of the vector
      * @return the magnitude of the vector
      */
-    public static double magnitudeOf(double x, double z)
-    {
+    public static double magnitudeOf(double x, double z) {
         return Math.sqrt(x * x + z * z);
     }
 
@@ -52,8 +49,7 @@ public class Utilities
      * @param z the z-coordinate of the vector
      * @return the magnitude of the vector
      */
-    public static double magnitudeOf(double x, double y, double z)
-    {
+    public static double magnitudeOf(double x, double y, double z) {
         return Math.sqrt(x * x + y * y + z * z);
     }
 }
