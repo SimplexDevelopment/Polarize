@@ -17,5 +17,5 @@ jobs:
           java-version: 17
           target-folder: javadoc 
           project: gradle
-          custom-command: javadoc -d javadoc -sourcepath src/main/java -subpackages .
+          custom-command: javadoc -d javadoc -sourcepath Commons/src/main/java -subpackages .
           
