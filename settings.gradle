@@ -1,4 +1,6 @@
 rootProject.name = 'Polarize'
-include 'Commons'
-include 'Paper'
+include 'Converter'
+include 'Bukkit'
+include 'Caravan'
+include 'Caravan'
 

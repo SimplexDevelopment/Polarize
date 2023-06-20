@@ -20,7 +20,7 @@ subprojects {
 }
 
 tasks.build {
-    dependsOn(":Commons:build", ":Paper:build")
+    dependsOn(":Converter:build", ":Bukkit:build")
 }
 
 test {

@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'io.github.simplexdev'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        name = "spigot-repo"
+        url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT'
+    implementation project(':Converter')
+}
+
+test {
+    useJUnitPlatform()
+}
